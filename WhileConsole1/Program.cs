@@ -11,8 +11,15 @@ namespace WhileConsole1
         static void Main(string[] args)
         {
             int n,i=0;
-            n = int.Parse(Console.ReadLine());
-            while(Math.Pow(3,i)<=n)
+            Console.WriteLine("Введите N :");
+            var intN = Console.ReadLine();
+            while (!int.TryParse(intN, out n))
+            {
+                Console.WriteLine("Ошибка ввода N!");
+                intN = Console.ReadLine();
+            }
+            n = Convert.ToInt32(intN);
+            while (Math.Pow(3,i)<=n)
             {
                 i++;
             }

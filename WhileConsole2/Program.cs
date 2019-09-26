@@ -10,15 +10,22 @@ namespace WhileConsole2
     {
         static void Main(string[] args)
         {
-            double m = 10,p,km=0,d=0;
-            p = int.Parse(Console.ReadLine());
-            while(km<=200)
+            double m = 10,n,km=0,d=0;
+            Console.WriteLine("Введите N :");
+            var intN = Console.ReadLine();
+            while (!double.TryParse(intN, out n))
+            {
+                Console.WriteLine("Ошибка ввода N!");
+                intN = Console.ReadLine();
+            }
+            n = Convert.ToInt32(intN);
+            while (km<=200)
             {
                 km += m;
-                m += (m / 100) * p;
+                m += (m / 100) * n;
                 d++;
             }
-            Console.WriteLine($"{km} , {d}");
+            Console.WriteLine($"Километры :{km} Дни : {d}");
             
         }
     }

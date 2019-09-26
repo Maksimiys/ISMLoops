@@ -10,14 +10,27 @@ namespace ForConsole7
     {
         static void Main(string[] args)
         {
-            int n,m;
+            int a,b;
             double suma = 0;
-            n = int.Parse(Console.ReadLine()); 
-            m = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i <= n; i++)
+            Console.WriteLine("Введите А :");
+            var intA = Console.ReadLine();
+            while (!int.TryParse(intA, out a))
             {
-                suma += Math.Pow(i, m);
+                Console.WriteLine("Ошибка ввода A!");
+                intA = Console.ReadLine();
+            }
+            a = Convert.ToInt32(intA);
+            Console.WriteLine("Введите B :");
+            var intB = Console.ReadLine();
+            while (!int.TryParse(intB, out b))
+            {
+                Console.WriteLine("Ошибка ввода B!");
+                intB = Console.ReadLine();
+            }
+            b = Convert.ToInt32(intB);
+            for (int i = 0; i <= a; i++)
+            {
+                suma += Math.Pow(i, b);
             }
             Console.WriteLine($"{suma}");
 

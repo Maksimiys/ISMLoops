@@ -12,8 +12,15 @@ namespace ForConsole6
         {
             int n;
              double suma=0;
-            n = int.Parse(Console.ReadLine());
-            for(int i=0;i<=n;i++)
+            Console.WriteLine("Введите N :");
+            var intN = Console.ReadLine();
+            while (!int.TryParse(intN, out n))
+            {
+                Console.WriteLine("Ошибка ввода N!");
+                intN = Console.ReadLine();
+            }
+            n = Convert.ToInt32(intN);
+            for (int i=0;i<=n;i++)
             {
                 suma += Math.Pow(i, n - i + 1);
             }

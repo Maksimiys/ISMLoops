@@ -15,17 +15,24 @@ namespace ForConsole1
             var intA = Console.ReadLine();
             while(!int.TryParse(intA,out a))
             {
-                Console.WriteLine("Ошибка ввода!");
+                Console.WriteLine("Ошибка ввода A!");
                 intA = Console.ReadLine();
             }
             a = Convert.ToInt32(intA);
-            b = int.Parse(Console.ReadLine());
-
+            Console.WriteLine("Введите B :");
+            var intB = Console.ReadLine();
+            while (!int.TryParse(intB, out b))
+            {
+                Console.WriteLine("Ошибка ввода B!");
+                intB = Console.ReadLine();
+            }
+            b = Convert.ToInt32(intB);
+            
             for (int i=a;i<=b;i++)
             {
                 suma *= i;
             }
-            Console.WriteLine($"{ suma}");
+            Console.WriteLine($"Ответ : { suma}");
         }
     }
 }

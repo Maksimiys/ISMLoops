@@ -11,7 +11,14 @@ namespace ForConsole5
         static void Main(string[] args)
         {
             int n,k=1;
-            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите N :");
+            var intN = Console.ReadLine();
+            while (!int.TryParse(intN, out n))
+            {
+                Console.WriteLine("Ошибка ввода N!");
+                intN = Console.ReadLine();
+            }
+            n = Convert.ToInt32(intN);
             long  suma = 0;
             for(int i=1;i<=n;i++)
             {
